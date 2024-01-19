@@ -1,0 +1,43 @@
+{
+    "name": "novakji/sorted-linked-list",
+    "description": "Library providing SortedLinkedList (linked list that keeps values sorted)",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Novakji\\SortedLinkedList\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jiří Novák",
+            "email": "mail@novakjiri.cz"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10",
+        "phpstan/phpstan": "^2.0",
+        "overtrue/phplint": "^9.0",
+        "slevomat/coding-standard": "^8.0"
+    },
+    "scripts": {
+        "phplint": "php bin/phplint",
+        "phpcs": "php bin/phpcs --standard=./phpcs.xml",
+        "phpcbf": "php bin/phpcbf --standard=./phpcs.xml",
+        "phpstan": "php bin/phpstan analyse -c phpstan.neon",
+        "test-unit": "php bin/phpunit tests/unit",
+        "check": [
+            "@phplint",
+            "@phpcs",
+            "@phpstan",
+            "@test-unit"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
